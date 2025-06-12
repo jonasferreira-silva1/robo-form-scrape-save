@@ -1,73 +1,163 @@
-# Welcome to your Lovable project
+# RPA Studio - Automação de Formulários Web
 
-## Project info
+## Sobre o Projeto
 
-**URL**: https://lovable.dev/projects/9e126a0b-cbd5-48fa-8002-c0547c6f3d19
+O RPA Studio é uma plataforma de Automação Robótica de Processos (RPA) focada no preenchimento automático de formulários web utilizando dados de planilhas Excel. A aplicação oferece uma interface moderna e intuitiva para configurar, executar e monitorar automações.
 
-## How can I edit this code?
+## Funcionalidades Principais
 
-There are several ways of editing your application.
+- **Dashboard de Métricas**: Visualização de estatísticas e desempenho das automações
+- **Assistente de Configuração**: Interface passo a passo para criar novas automações
+- **Gerenciamento de Templates**: Salve e reutilize configurações de automação
+- **Agendamento**: Configure execuções automáticas em horários específicos
+- **Monitoramento em Tempo Real**: Acompanhe o progresso das automações em execução
+- **Relatórios**: Gere relatórios detalhados sobre as execuções
 
-**Use Lovable**
+## Tecnologias Utilizadas
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/9e126a0b-cbd5-48fa-8002-c0547c6f3d19) and start prompting.
+- **Frontend**:
+  - React 18
+  - TypeScript
+  - Tailwind CSS
+  - Shadcn/UI (Componentes UI)
+  - React Router
+  - React Hook Form
+  - React Query
+  - Vite (Build tool)
+- **Containerização**:
+  - Docker
+  - Docker Compose
+  - Nginx
 
-Changes made via Lovable will be committed automatically to this repo.
+## Como Executar o Projeto
 
-**Use your preferred IDE**
+### Método 1: Instalação Local
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Requisitos:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+- Node.js (versão 16 ou superior)
+- npm ou yarn
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Clonar o repositório
+git clone <URL_DO_REPOSITÓRIO>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Acessar o diretório do projeto
+cd robo-form-scrape-save
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Instalar dependências
+npm install
+# ou
+yarn install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Iniciar o servidor de desenvolvimento
 npm run dev
+# ou
+yarn dev
 ```
 
-**Edit a file directly in GitHub**
+O aplicativo estará disponível em `http://localhost:5173`.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Método 2: Usando Docker
 
-**Use GitHub Codespaces**
+Requisitos:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- Docker
+- Docker Compose
 
-## What technologies are used for this project?
+```sh
+# Clonar o repositório
+git clone <URL_DO_REPOSITÓRIO>
 
-This project is built with:
+# Acessar o diretório do projeto
+cd robo-form-scrape-save
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+# Construir e iniciar os containers
+docker-compose up -d
 
-## How can I deploy this project?
+# Para ambiente de desenvolvimento (opcional)
+# Edite o docker-compose.yml para descomentar a configuração de desenvolvimento
+```
 
-Simply open [Lovable](https://lovable.dev/projects/9e126a0b-cbd5-48fa-8002-c0547c6f3d19) and click on Share -> Publish.
+O aplicativo estará disponível em `http://localhost:8080`.
 
-## Can I connect a custom domain to my Lovable project?
+#### Scripts de Conveniência para Docker
 
-Yes, you can!
+O projeto inclui scripts para facilitar o uso do Docker:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+**Linux/Mac**:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+```sh
+# Tornar o script executável
+chmod +x docker.sh
+
+# Iniciar containers
+./docker.sh start
+
+# Parar containers
+./docker.sh stop
+
+# Reiniciar containers
+./docker.sh restart
+
+# Reconstruir imagem
+./docker.sh build
+
+# Iniciar em modo desenvolvimento
+./docker.sh dev
+
+# Restaurar configuração de produção
+./docker.sh prod
+
+# Ver logs
+./docker.sh logs
+```
+
+**Windows**:
+
+```cmd
+# Iniciar containers
+docker.bat start
+
+# Parar containers
+docker.bat stop
+
+# Reiniciar containers
+docker.bat restart
+
+# Reconstruir imagem
+docker.bat build
+
+# Ver logs
+docker.bat logs
+```
+
+## Estrutura do Projeto
+
+- `/src`: Código fonte da aplicação
+  - `/components`: Componentes React reutilizáveis
+  - `/pages`: Páginas da aplicação
+  - `/hooks`: Custom hooks
+  - `/lib`: Utilitários e configurações
+- `Dockerfile`: Configuração para construção da imagem Docker
+- `docker-compose.yml`: Configuração para orquestração de containers
+- `nginx.conf`: Configuração do servidor web Nginx
+- `docker.sh`/`docker.bat`: Scripts para facilitar operações com Docker
+
+## Fluxo de Trabalho
+
+1. **Configuração**: Use o assistente para configurar uma nova automação
+2. **Upload de Dados**: Faça upload do arquivo Excel com os dados a serem preenchidos
+3. **Mapeamento**: Configure os seletores CSS para os campos do formulário
+4. **Execução**: Inicie a automação e monitore o progresso
+5. **Resultados**: Visualize e exporte os resultados da automação
+
+## Contribuição
+
+Contribuições são bem-vindas! Para contribuir:
+
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/nova-funcionalidade`)
+3. Commit suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`)
+4. Push para a branch (`git push origin feature/nova-funcionalidade`)
+5. Abra um Pull Request

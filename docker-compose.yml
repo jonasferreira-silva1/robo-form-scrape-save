@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: rpa-studio
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    # Para desenvolvimento, descomente as linhas abaixo e comente a build acima
+    # image: node:18-alpine
+    # command: sh -c "npm install && npm run dev"
+    # volumes:
+    #   - .:/app
+    #   - /app/node_modules
+    # working_dir: /app
+    # ports:
+    #   - "5173:5173"
+    # environment:
+    #   - VITE_HOST=0.0.0.0
