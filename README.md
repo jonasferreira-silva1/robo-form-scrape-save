@@ -1,4 +1,4 @@
-# RPA Studio - Automação de Formulários Web
+# RPA Studio - Projeto pessoal de Automação de Formulários Web
 
 ## Sobre o Projeto
 
