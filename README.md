@@ -162,5 +162,5 @@ Contribuições são bem-vindas! Para contribuir:
 4. Push para a branch (`git push origin feature/nova-funcionalidade`)
 5. Abra um Pull Request
 
-<img width="941" alt="image" src="https://github.com/user-attachments/assets/00dce2b8-b5a7-40f4-885d-1a2dd9a30b7b" />
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/e18d24f6-02db-4720-8531-163bc22846da" />
 
