@@ -7,12 +7,19 @@ import {
   Activity,
   FileText,
   Bot,
-  Zap
+  Zap,
+  FolderOpen,
+  Calendar,
+  Wand2
 } from 'lucide-react';
 import Header from '@/components/Header';
 import MetricsDashboard from '@/components/MetricsDashboard';
 import ProjectConfig from '@/components/ProjectConfig';
 import ExecutionMonitor from '@/components/ExecutionMonitor';
+import TemplateManager from '@/components/TemplateManager';
+import ScheduleManager from '@/components/ScheduleManager';
+import ReportsManager from '@/components/ReportsManager';
+import ConfigWizard from '@/components/ConfigWizard';
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -37,18 +44,30 @@ const Index = () => {
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-4 mb-8 bg-background/50 backdrop-blur-sm">
+          <TabsList className="grid w-full grid-cols-7 mb-8 bg-background/50 backdrop-blur-sm">
             <TabsTrigger value="dashboard" className="flex items-center space-x-2">
               <BarChart3 className="w-4 h-4" />
               <span>Dashboard</span>
+            </TabsTrigger>
+            <TabsTrigger value="wizard" className="flex items-center space-x-2">
+              <Wand2 className="w-4 h-4" />
+              <span>Assistente</span>
             </TabsTrigger>
             <TabsTrigger value="config" className="flex items-center space-x-2">
               <Settings className="w-4 h-4" />
               <span>Configuração</span>
             </TabsTrigger>
+            <TabsTrigger value="templates" className="flex items-center space-x-2">
+              <FolderOpen className="w-4 h-4" />
+              <span>Templates</span>
+            </TabsTrigger>
+            <TabsTrigger value="schedule" className="flex items-center space-x-2">
+              <Calendar className="w-4 h-4" />
+              <span>Agendamento</span>
+            </TabsTrigger>
             <TabsTrigger value="monitor" className="flex items-center space-x-2">
               <Activity className="w-4 h-4" />
-              <span>Monitoramento</span>
+              <span>Monitor</span>
             </TabsTrigger>
             <TabsTrigger value="reports" className="flex items-center space-x-2">
               <FileText className="w-4 h-4" />
@@ -122,8 +141,20 @@ const Index = () => {
             </div>
           </TabsContent>
 
+          <TabsContent value="wizard" className="animate-slide-up">
+            <ConfigWizard />
+          </TabsContent>
+
           <TabsContent value="config" className="animate-slide-up">
             <ProjectConfig />
+          </TabsContent>
+
+          <TabsContent value="templates" className="animate-slide-up">
+            <TemplateManager />
+          </TabsContent>
+
+          <TabsContent value="schedule" className="animate-slide-up">
+            <ScheduleManager />
           </TabsContent>
 
           <TabsContent value="monitor" className="animate-slide-up">
@@ -131,13 +162,7 @@ const Index = () => {
           </TabsContent>
 
           <TabsContent value="reports" className="animate-slide-up">
-            <div className="metric-card text-center py-12">
-              <FileText className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-foreground mb-2">Relatórios</h3>
-              <p className="text-muted-foreground">
-                Módulo de relatórios em desenvolvimento. Em breve você poderá visualizar relatórios detalhados das suas automações.
-              </p>
-            </div>
+            <ReportsManager />
           </TabsContent>
         </Tabs>
       </main>
