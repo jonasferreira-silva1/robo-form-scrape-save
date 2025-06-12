@@ -24,14 +24,10 @@ O RPA Studio é uma plataforma de Automação Robótica de Processos (RPA) focad
   - React Hook Form
   - React Query
   - Vite (Build tool)
-- **Containerização**:
-  - Docker
-  - Docker Compose
-  - Nginx
 
 ## Como Executar o Projeto
 
-### Método 1: Instalação Local
+### Instalação Local
 
 Requisitos:
 
@@ -58,80 +54,6 @@ yarn dev
 
 O aplicativo estará disponível em `http://localhost:5173`.
 
-### Método 2: Usando Docker
-
-Requisitos:
-
-- Docker
-- Docker Compose
-
-```sh
-# Clonar o repositório
-git clone <URL_DO_REPOSITÓRIO>
-
-# Acessar o diretório do projeto
-cd robo-form-scrape-save
-
-# Construir e iniciar os containers
-docker-compose up -d
-
-# Para ambiente de desenvolvimento (opcional)
-# Edite o docker-compose.yml para descomentar a configuração de desenvolvimento
-```
-
-O aplicativo estará disponível em `http://localhost:8080`.
-
-#### Scripts de Conveniência para Docker
-
-O projeto inclui scripts para facilitar o uso do Docker:
-
-**Linux/Mac**:
-
-```sh
-# Tornar o script executável
-chmod +x docker.sh
-
-# Iniciar containers
-./docker.sh start
-
-# Parar containers
-./docker.sh stop
-
-# Reiniciar containers
-./docker.sh restart
-
-# Reconstruir imagem
-./docker.sh build
-
-# Iniciar em modo desenvolvimento
-./docker.sh dev
-
-# Restaurar configuração de produção
-./docker.sh prod
-
-# Ver logs
-./docker.sh logs
-```
-
-**Windows**:
-
-```cmd
-# Iniciar containers
-docker.bat start
-
-# Parar containers
-docker.bat stop
-
-# Reiniciar containers
-docker.bat restart
-
-# Reconstruir imagem
-docker.bat build
-
-# Ver logs
-docker.bat logs
-```
-
 ## Estrutura do Projeto
 
 - `/src`: Código fonte da aplicação
@@ -139,10 +61,6 @@ docker.bat logs
   - `/pages`: Páginas da aplicação
   - `/hooks`: Custom hooks
   - `/lib`: Utilitários e configurações
-- `Dockerfile`: Configuração para construção da imagem Docker
-- `docker-compose.yml`: Configuração para orquestração de containers
-- `nginx.conf`: Configuração do servidor web Nginx
-- `docker.sh`/`docker.bat`: Scripts para facilitar operações com Docker
 
 ## Fluxo de Trabalho
 

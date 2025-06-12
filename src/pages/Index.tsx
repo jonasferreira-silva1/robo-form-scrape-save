@@ -1,33 +1,32 @@
-
-import React, { useState } from 'react';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { 
-  BarChart3, 
-  Settings, 
+import React, { useState } from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  BarChart3,
+  Settings,
   Activity,
   FileText,
   Bot,
   Zap,
   FolderOpen,
   Calendar,
-  Wand2
-} from 'lucide-react';
-import Header from '@/components/Header';
-import MetricsDashboard from '@/components/MetricsDashboard';
-import ProjectConfig from '@/components/ProjectConfig';
-import ExecutionMonitor from '@/components/ExecutionMonitor';
-import TemplateManager from '@/components/TemplateManager';
-import ScheduleManager from '@/components/ScheduleManager';
-import ReportsManager from '@/components/ReportsManager';
-import ConfigWizard from '@/components/ConfigWizard';
+  Wand2,
+} from "lucide-react";
+import Header from "@/components/Header";
+import MetricsDashboard from "@/components/MetricsDashboard";
+import ProjectConfig from "@/components/ProjectConfig";
+import ExecutionMonitor from "@/components/ExecutionMonitor";
+import TemplateManager from "@/components/TemplateManager";
+import ScheduleManager from "@/components/ScheduleManager";
+import ReportsManager from "@/components/ReportsManager";
+import ConfigWizard from "@/components/ConfigWizard";
 
 const Index = () => {
-  const [activeTab, setActiveTab] = useState('dashboard');
+  const [activeTab, setActiveTab] = useState("dashboard");
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-background/95">
       <Header />
-      
+
       <main className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <div className="flex items-center space-x-3 mb-2">
@@ -45,7 +44,10 @@ const Index = () => {
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="grid w-full grid-cols-7 mb-8 bg-background/50 backdrop-blur-sm">
-            <TabsTrigger value="dashboard" className="flex items-center space-x-2">
+            <TabsTrigger
+              value="dashboard"
+              className="flex items-center space-x-2"
+            >
               <BarChart3 className="w-4 h-4" />
               <span>Dashboard</span>
             </TabsTrigger>
@@ -57,19 +59,31 @@ const Index = () => {
               <Settings className="w-4 h-4" />
               <span>Configuração</span>
             </TabsTrigger>
-            <TabsTrigger value="templates" className="flex items-center space-x-2">
+            <TabsTrigger
+              value="templates"
+              className="flex items-center space-x-2"
+            >
               <FolderOpen className="w-4 h-4" />
               <span>Templates</span>
             </TabsTrigger>
-            <TabsTrigger value="schedule" className="flex items-center space-x-2">
+            <TabsTrigger
+              value="schedule"
+              className="flex items-center space-x-2"
+            >
               <Calendar className="w-4 h-4" />
               <span>Agendamento</span>
             </TabsTrigger>
-            <TabsTrigger value="monitor" className="flex items-center space-x-2">
+            <TabsTrigger
+              value="monitor"
+              className="flex items-center space-x-2"
+            >
               <Activity className="w-4 h-4" />
               <span>Monitor</span>
             </TabsTrigger>
-            <TabsTrigger value="reports" className="flex items-center space-x-2">
+            <TabsTrigger
+              value="reports"
+              className="flex items-center space-x-2"
+            >
               <FileText className="w-4 h-4" />
               <span>Relatórios</span>
             </TabsTrigger>
@@ -78,7 +92,7 @@ const Index = () => {
           <TabsContent value="dashboard" className="animate-slide-up">
             <div className="space-y-8">
               <MetricsDashboard />
-              
+
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div className="metric-card">
                   <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center space-x-2">
@@ -86,19 +100,9 @@ const Index = () => {
                     <span>Automações Recentes</span>
                   </h3>
                   <div className="space-y-3">
-                    {[
-                      { name: 'Formulário Clientes', status: 'completed', time: '2 min atrás' },
-                      { name: 'Cadastro Fornecedores', status: 'running', time: 'Agora' },
-                      { name: 'Relatório Vendas', status: 'pending', time: 'Em fila' }
-                    ].map((item, index) => (
-                      <div key={index} className="flex items-center justify-between p-3 rounded-lg bg-background/30">
-                        <div className="flex items-center space-x-3">
-                          <div className={`status-indicator status-${item.status}`}></div>
-                          <span className="text-sm font-medium text-foreground">{item.name}</span>
-                        </div>
-                        <span className="text-xs text-muted-foreground">{item.time}</span>
-                      </div>
-                    ))}
+                    <div className="p-4 text-center text-muted-foreground rounded-lg bg-background/30">
+                      Nenhuma automação recente encontrada.
+                    </div>
                   </div>
                 </div>
 
@@ -114,7 +118,10 @@ const Index = () => {
                         <span>23%</span>
                       </div>
                       <div className="w-full bg-background/50 rounded-full h-2">
-                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '23%' }}></div>
+                        <div
+                          className="bg-blue-500 h-2 rounded-full"
+                          style={{ width: "23%" }}
+                        ></div>
                       </div>
                     </div>
                     <div>
@@ -123,7 +130,10 @@ const Index = () => {
                         <span>67%</span>
                       </div>
                       <div className="w-full bg-background/50 rounded-full h-2">
-                        <div className="bg-green-500 h-2 rounded-full" style={{ width: '67%' }}></div>
+                        <div
+                          className="bg-green-500 h-2 rounded-full"
+                          style={{ width: "67%" }}
+                        ></div>
                       </div>
                     </div>
                     <div>
@@ -132,7 +142,10 @@ const Index = () => {
                         <span>12%</span>
                       </div>
                       <div className="w-full bg-background/50 rounded-full h-2">
-                        <div className="bg-purple-500 h-2 rounded-full" style={{ width: '12%' }}></div>
+                        <div
+                          className="bg-purple-500 h-2 rounded-full"
+                          style={{ width: "12%" }}
+                        ></div>
                       </div>
                     </div>
                   </div>
