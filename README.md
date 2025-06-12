@@ -161,3 +161,6 @@ Contribuições são bem-vindas! Para contribuir:
 3. Commit suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`)
 4. Push para a branch (`git push origin feature/nova-funcionalidade`)
 5. Abra um Pull Request
+
+<img width="941" alt="image" src="https://github.com/user-attachments/assets/00dce2b8-b5a7-40f4-885d-1a2dd9a30b7b" />
+
