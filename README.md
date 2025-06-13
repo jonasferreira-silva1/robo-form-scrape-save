@@ -166,3 +166,5 @@ docker-compose up --build --force-recreate
 ## 📝 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+<img width="716" alt="image" src="https://github.com/user-attachments/assets/f4685097-0ce4-469e-9963-28cce87d2592" />
+
